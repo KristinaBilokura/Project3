@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+<mns:fund xmlns:mns="http://www.example.com/mns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.com/mns Schema.xsd">
+<gems><gem id="rock1"><name>diamond</name><preciousness>PRECIOUS</preciousness><origin>Canada</origin><visualParameters><color>colorless</color><transparency>100</transparency><gemCutting>15</gemCutting></visualParameters><value>10.0</value></gem>
+<gem id="rock2"><name>topaz</name><preciousness>SEMIPRECIOUS</preciousness><origin>Sweden</origin><visualParameters><color>colorless</color><transparency>70</transparency><gemCutting>8</gemCutting></visualParameters><value>5.0</value></gem>
+</gems></mns:fund>

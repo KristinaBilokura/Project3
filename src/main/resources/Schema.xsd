@@ -1,0 +1,86 @@
+<?xml version="1.0" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://www.example.com/mns"
+            xmlns:mns="http://www.example.com/mns">
+
+    <xsd:element name="fund">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="gems">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="gem" type="mns:Gem" maxOccurs="unbounded"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:complexType name="Gem">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:string"/>
+            <xsd:element name="preciousness" type="mns:Preciousness"/>
+            <xsd:element name="origin" type="xsd:string"/>
+            <xsd:element name="visualParameters" type="mns:VisualParameters"/>
+            <xsd:element name="value" type="mns:Value"/>
+        </xsd:sequence>
+        <xsd:attribute name="id" type="mns:GemId" use="required"/>
+    </xsd:complexType>
+
+    <xsd:complexType name="VisualParameters">
+        <xsd:sequence>
+
+            <xsd:element name="color" type="mns:Color" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="transparency" type="mns:Transparency"/>
+            <xsd:element name="gemCutting" type="mns:GemCutting"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:simpleType name="GemId">
+        <xsd:restriction base="xsd:ID">
+            <xsd:pattern value="[A-Za-z0-9-]+"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="Preciousness">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="PRECIOUS"/>
+            <xsd:enumeration value="SEMIPRECIOUS"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="Color">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="RED"/>
+            <xsd:enumeration value="ORANGE"/>
+            <xsd:enumeration value="YELLOW"/>
+            <xsd:enumeration value="GREEN"/>
+            <xsd:enumeration value="BLUE"/>
+            <xsd:enumeration value="VIOLET"/>
+            <xsd:enumeration value="colorless"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="Transparency">
+        <xsd:restriction base="xsd:int">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="100"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+
+    <xsd:simpleType name="GemCutting">
+        <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="4"/>
+            <xsd:maxInclusive value="15"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="Value">
+        <xsd:restriction base="xsd:float">
+            <xsd:minInclusive value="0.01"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+</xsd:schema>

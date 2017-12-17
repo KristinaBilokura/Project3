@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<pavilion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="src/main/resources/Schema.xsd">
+    <gems>
+        <gem id="rock1">
+            <name>PRECIOUS</name>
+            <origin>Canada</origin>
+            <value>10.0</value>
+            <visualParameters>
+                <color>colorless</color>
+                <gemCutting>15</gemCutting>
+                <transparency>100</transparency>
+            </visualParameters>
+        </gem>
+        <gem id="rock2">
+            <name>SEMIPRECIOUS</name>
+            <origin>Sweden</origin>
+            <value>5.0</value>
+            <visualParameters>
+                <color>colorless</color>
+                <gemCutting>8</gemCutting>
+                <transparency>70</transparency>
+            </visualParameters>
+        </gem>
+    </gems>
+</pavilion>
